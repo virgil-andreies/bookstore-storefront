@@ -73,12 +73,12 @@ export class MyAccountComponent implements OnInit {
     this.userService.retrievePassword(this.recoverEmail).subscribe(
       res => {
         console.log(res);
-        this.emailSent = true;
+        this.forgetPasswordEmailSent = true;
       },
       error => {
         console.log(error.text());
         const errorMessage = error.text();
-        if (errorMessage === 'emailExists') { this.usernameExists = true; }
+        if (errorMessage === 'Email not found') { this.emailNotExists = true; }
       }
     );
   }

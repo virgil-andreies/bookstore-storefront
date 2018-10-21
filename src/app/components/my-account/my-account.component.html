@@ -22,7 +22,7 @@
       <div class="panel-group">
         <div class="panel panel-default panel-faq" style="border: none;">
 
-          <div class="panel-body" style="background-color: #CCB89C; margin-top:20px;">
+          <div class="panel-body" style="background-color: rgb(146, 112, 63); margin-top:20px;">
             <mat-tab-group>
               <mat-tab label="Login">
                 <div style="margin-top:20px;">
@@ -61,7 +61,7 @@
 
                     <div class="form-group">
                       <label for="newUsername"> Username * </label>
-                      &nbsp;,<span *ngIf="usernameExists" style="color:red">Username already exists. Choose another
+                      &nbsp;<span *ngIf="usernameExists" style="color:red">Username already exists. Choose another
                         one.</span>
                       <input type="text" class="form-control" id="newUsername" name="username" [(ngModel)]="username"
                         required="required">
@@ -70,7 +70,7 @@
 
                     <div class="form-group">
                       <label for="email"> Email Address * </label>
-                      &nbsp;,<span *ngIf="emailExists" style="color:red">Email already exists. Choose a different one.</span>
+                      &nbsp;<span *ngIf="emailExists" style="color:red">Email already exists. Choose a different one.</span>
                       <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
                         required="required">
                       <p style="color: black;">A valid e-mail address. All e-mails from the system will be sent to this
@@ -85,7 +85,7 @@
 
               <mat-tab label="Forgot Password">
                 <div style="margin-top: 20px;">
-                  <div class="alert alert-info" *ngIf="emailNotExists">
+                  <div class="alert alert-warning" *ngIf="emailNotExists">
                     The E-mail doesn't exist. 
                   </div>
 
