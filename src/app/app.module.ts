@@ -21,8 +21,11 @@ import { UserService } from './services/user.service';
 import { PaymentService } from './services/payment.service';
 import { ShippingService } from './services/shipping.service';
 import { BookService } from './services/book.service';
+import { CartService } from './services/cart.service';
 
 import { DataFilterPipe } from './components/book-list/data-filter.pipe';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { DataFilterPipe } from './components/book-list/data-filter.pipe';
     MyAccountComponent,
     MyProfileComponent,
     BookListComponent,
-    DataFilterPipe
+    DataFilterPipe,
+    BookDetailComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,7 @@ import { DataFilterPipe } from './components/book-list/data-filter.pipe';
     MatProgressSpinnerModule,
     DataTableModule
   ],
-  providers: [LoginService, UserService, PaymentService, ShippingService, BookService],
+  providers: [LoginService, UserService, PaymentService, ShippingService, BookService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
