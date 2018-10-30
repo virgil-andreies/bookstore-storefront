@@ -22,10 +22,13 @@ import { PaymentService } from './services/payment.service';
 import { ShippingService } from './services/shipping.service';
 import { BookService } from './services/book.service';
 import { CartService } from './services/cart.service';
+import { OrderService } from './services/order.service';
+import { CheckoutService } from './services/checkout.service';
 
 import { DataFilterPipe } from './components/book-list/data-filter.pipe';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     BookListComponent,
     DataFilterPipe,
     BookDetailComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     MatProgressSpinnerModule,
     DataTableModule
   ],
-  providers: [LoginService, UserService, PaymentService, ShippingService, BookService, CartService],
+  providers: [LoginService, UserService, PaymentService, ShippingService, BookService, CartService, CheckoutService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -49,7 +49,7 @@ export class CartService {
     const url = this.serverPath + '/cart/updateCartItem';
 
     const cartItemInfo = {
-      'bookId' : cartItemId,
+      'cartItemId' : cartItemId,
       'qty' : qty
     };
 

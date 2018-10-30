@@ -15,12 +15,12 @@ import { CartItem } from '../../models/cart-item';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  private serVerPath = AppConst.serverPath;
+  private serverPath = AppConst.serverPath;
   private selectedBook: Book;
-  private carItemList: CartItem[] = [];
+  private cartItemList: CartItem[] = [];
   private cartItemNumber: number;
-  private shoppingCart: ShoppingCart;
-  private cartitemUpdated: boolean;
+  private shoppingCart: ShoppingCart = new ShoppingCart();
+  private cartItemUpdated: boolean;
   private emptyCart: boolean;
   private notEnoughStock: boolean;
 
@@ -49,7 +49,7 @@ export class ShoppingCartComponent implements OnInit {
     this.cartService.updateCartItem(cartItem.id, cartItem.qty).subscribe(
       res => {
         console.log(res.text());
-        this.cartitemUpdated = true;
+        this.cartItemUpdated = true;
         this.getShoppingCart();
       },
       error => {
@@ -61,8 +61,8 @@ export class ShoppingCartComponent implements OnInit {
   getCartItemList() {
     this.cartService.getCartItemList().subscribe(
       res => {
-        this.carItemList = res.json();
-        this.cartItemNumber = this.carItemList.length;
+        this.cartItemList = res.json();
+        this.cartItemNumber = this.cartItemList.length;
       },
       error => {
         console.log(error.text());
@@ -86,7 +86,7 @@ export class ShoppingCartComponent implements OnInit {
     if (this.cartItemNumber === 0) {
       this.emptyCart = true;
     } else {
-      for (const item of this.carItemList) {
+      for (const item of this.cartItemList) {
         if (item.qty > item.book.inStockNumber) {
           console.log('Not Enough Stock');
           this.notEnoughStock = true;
@@ -99,8 +99,8 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getCartItemList();
-    // this.getShoppingCart();
+    this.getCartItemList();
+    this.getShoppingCart();
   }
 
 }
