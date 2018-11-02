@@ -29,6 +29,7 @@ import { DataFilterPipe } from './components/book-list/data-filter.pipe';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrderComponent } from './components/order/order.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { OrderComponent } from './components/order/order.component';
     DataFilterPipe,
     BookDetailComponent,
     ShoppingCartComponent,
-    OrderComponent
+    OrderComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

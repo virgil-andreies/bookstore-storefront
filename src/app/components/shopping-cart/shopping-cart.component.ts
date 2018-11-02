@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConst } from '../../constants/app-const';
-import { User } from '../../models/user';
-import { UserService } from '../../services/user.service';
-import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Book } from '../../models/book';
 import { CartService } from '../../services/cart.service';

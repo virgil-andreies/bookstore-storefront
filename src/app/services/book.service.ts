@@ -23,15 +23,17 @@ export class BookService {
 
     const tokenHeader = new Headers({
       'Content-Type' : 'application/json',
+      'x-auth-token' : localStorage.getItem('xAuthToken')
     });
     return this.http.get(url, { headers: tokenHeader});
   }
 
   searchBook(keyword: string) {
-    const url = this.serverPath + '/book/BookList';
-
+    const url = this.serverPath + '/book/searchBook';
+    console.log(keyword);
     const tokenHeader = new Headers({
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/json',
+      'x-auth-token' : localStorage.getItem('xAuthToken')
     });
     return this.http.post(url, keyword, { headers: tokenHeader});
   }

@@ -50,7 +50,7 @@
               </div>
               <div class="col-xs-5 text-right">
                 <h3><strong style="color: darkred;">
-                    <span>{{shoppingCart.grandTotal * 0.06 | number : '1.2-2'}}</span>
+                    <span>{{shoppingCart.grandTotal * 1.06 | number : '1.2-2'}}</span>
                   </strong></h3>
               </div>
             </div>
@@ -80,10 +80,8 @@
                 <table class="table" *ngIf="!emptyShippingList">
                   <thead>
                     <tr>
-                      <td>
                       <th> Available Shipping Address</th>
                       <th> Operation </th>
-                      </td>
                     </tr>
                   </thead>
                   <tbody>
@@ -105,7 +103,7 @@
                 <div class="form-group">
                   <label for="shippingName">* Name</label>
                   <input type="text" class="form-control" id="shippingName" placeholder="Receiver Name" name="shippingAdressName"
-                    required="required" [(ngModel)]="shippingAddress.shippingAddressAddressName" />
+                    required="required" [(ngModel)]="shippingAddress.shippingAddressName" />
                 </div>
                 <div class="form-group">
                   <label for="shippingAddress">* Street Address</label>
@@ -142,7 +140,7 @@
                     </div>
                   </div>
                 </div>
-                <a mat-raised button class="mat-primary" (click)="goToPayment()">Next</a>
+                <a mat-raised-button class="mat-primary" (click)="goToPayment()">Next</a>
               </div>
             </div>
           </mat-tab>
@@ -158,10 +156,8 @@
                 <table class="table" *ngIf="!emptyShippingList">
                   <thead>
                     <tr>
-                      <td>
                       <th> Available Credit Card</th>
                       <th> Operation </th>
-                      </td>
                     </tr>
                   </thead>
                   <tbody>
@@ -351,7 +347,7 @@
                 <div class="row" *ngFor="let cartItem of cartItemList">
                   <hr />
                   <div class="col-xs-2">
-                    <a md-button (click)="onSelect(cartItem.book)"><img class="img-responsive" src="{{serverPath}}/image/book/{{cartItem.book.id}}.png"
+                    <a mat-button (click)="onSelect(cartItem.book)"><img class="img-responsive" src="{{serverPath}}/image/book/{{cartItem.book.id}}.png"
                         style="width:70px;" /></a>
                   </div>
                   <div class="col-xs-6">
@@ -372,14 +368,13 @@
                     <h5 style="font-size: large">{{cartItem.qty}}</h5>
                   </div>
                 </div>
-                <div class="row">
-                  <hr />
-                  <h4 class="col-xs-12 text-right"><strong style="font-size: large">Total Price (<span>{{cartItemNumber}}</span>
-                      items): </strong><span style="color:#db3208;font-size: large">$ <span>{{shoppingCart.grandTotal}}</span></span></h4>
-                  <br /><br />
-                  <button md-raised-button type="submit" class="btn-block mat-primary">Place your order</button>
-                  <p>By placing your order, you agree to Virgil's Bookstore privacy notice and conidtions of use.</p>
-                </div>
+                <hr />
+                <h4 class="col-xs-12 text-right"><strong style="font-size: large">Total Price (<span>{{cartItemNumber}}</span>
+                    items): </strong><span style="color:#db3208;font-size: large">$ <span>{{shoppingCart.grandTotal}}</span></span></h4>
+                <br /><br />
+                <button mat-raised-button type="submit" class="btn-block mat-primary">Place your order</button>
+                <p>By placing your order, you agree to Virgil's Bookstore <a href="">privacy</a> notice and <a href="">conditions</a>
+                  of use.</p>
               </div>
             </div>
           </mat-tab>
